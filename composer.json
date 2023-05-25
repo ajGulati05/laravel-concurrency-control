@@ -34,8 +34,7 @@
     },
     "autoload": {
         "psr-4": {
-            "AjGulati05\\LaravelConcurrencyControl\\": "src/",
-            "AjGulati05\\LaravelConcurrencyControl\\Database\\Factories\\": "database/factories/"
+            "AjGulati05\\LaravelConcurrencyControl\\": "src/"
         }
     },
     "autoload-dev": {

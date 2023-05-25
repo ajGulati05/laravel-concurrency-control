@@ -17,9 +17,6 @@ class LaravelConcurrencyControlServiceProvider extends PackageServiceProvider
          */
         $package
             ->name('laravel-concurrency-control')
-            ->hasConfigFile()
-            ->hasViews()
-            ->hasMigration('create_laravel-concurrency-control_table')
-            ->hasCommand(LaravelConcurrencyControlCommand::class);
+            ->hasConfigFile();
     }
 }
