@@ -2,7 +2,6 @@
 
 namespace AjGulati05\LaravelConcurrencyControl;
 
-use AjGulati05\LaravelConcurrencyControl\Commands\LaravelConcurrencyControlCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 

@@ -1,9 +1,9 @@
 <?php
+
 namespace AjGulati05\LaravelConcurrencyControl;
 
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Carbon;
 
 trait Versioned
 {
@@ -26,7 +26,7 @@ trait Versioned
     public function update(array $attributes = [], array $options = [])
     {
         // Expect versionId in attributes
-        if (!isset($attributes['versionId'])) {
+        if (! isset($attributes['versionId'])) {
             abort(422, 'versionId is required');
         }
 
