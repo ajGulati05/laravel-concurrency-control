@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton;
+namespace AjGulati05\LaravelConcurrencyControl;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use VendorName\Skeleton\Commands\SkeletonCommand;
+use AjGulati05\LaravelConcurrencyControl\Commands\LaravelConcurrencyControlCommand;
 
-class SkeletonServiceProvider extends PackageServiceProvider
+class LaravelConcurrencyControlServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {
@@ -16,10 +16,10 @@ class SkeletonServiceProvider extends PackageServiceProvider
          * More info: https://github.com/spatie/laravel-package-tools
          */
         $package
-            ->name('skeleton')
+            ->name('laravel-concurrency-control')
             ->hasConfigFile()
             ->hasViews()
-            ->hasMigration('create_skeleton_table')
-            ->hasCommand(SkeletonCommand::class);
+            ->hasMigration('create_laravel-concurrency-control_table')
+            ->hasCommand(LaravelConcurrencyControlCommand::class);
     }
 }

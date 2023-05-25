@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace AjGulati05\LaravelConcurrencyControl\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class LaravelConcurrencyControlCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'laravel-concurrency-control';
 
     public $description = 'My command';
 

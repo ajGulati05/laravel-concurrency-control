@@ -1,17 +1,17 @@
 {
-    "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "name": "ajgulati05/laravel-concurrency-control",
+    "description": "Concurrency Control for Laravel: A package to manage concurrent updates in Laravel applications using a 'versionId' attached to Eloquent models.",
     "keywords": [
-        ":vendor_name",
+        "ajGulati05",
         "laravel",
-        ":package_slug"
+        "laravel-concurrency-control"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/ajgulati05/laravel-concurrency-control",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "Adevjit (AJ) Gulati",
+            "email": "gulati.adevjit@gmail.com",
             "role": "Developer"
         }
     ],
@@ -30,18 +30,17 @@
         "pestphp/pest-plugin-laravel": "^2.0",
         "phpstan/extension-installer": "^1.1",
         "phpstan/phpstan-deprecation-rules": "^1.0",
-        "phpstan/phpstan-phpunit": "^1.0",
-        "spatie/laravel-ray": "^1.26"
+        "phpstan/phpstan-phpunit": "^1.0"
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src/",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories/"
+            "AjGulati05\\LaravelConcurrencyControl\\": "src/",
+            "AjGulati05\\LaravelConcurrencyControl\\Database\\Factories\\": "database/factories/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests/"
+            "AjGulati05\\LaravelConcurrencyControl\\Tests\\": "tests/"
         }
     },
     "scripts": {
@@ -61,10 +60,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "AjGulati05\\LaravelConcurrencyControl\\LaravelConcurrencyControlServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\Facades\\Skeleton"
+                "LaravelConcurrencyControl": "AjGulati05\\LaravelConcurrencyControl\\Facades\\LaravelConcurrencyControl"
             }
         }
     },
