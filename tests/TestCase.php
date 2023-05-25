@@ -11,12 +11,9 @@ class TestCase extends Orchestra
     {
         parent::setUp();
         $this->setUpDatabase();
-      
+
     }
 
-  
-
-  
     protected function getEnvironmentSetUp($app)
     {
         $app['config']->set('database.default', 'sqlite');
@@ -28,7 +25,7 @@ class TestCase extends Orchestra
     }
 
     /**
-     * @param Application $app
+     * @param  Application  $app
      */
     protected function setUpDatabase()
     {
@@ -38,7 +35,4 @@ class TestCase extends Orchestra
             $table->timestamps();
         });
     }
-
-
-   
 }

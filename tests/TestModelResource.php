@@ -1,10 +1,10 @@
 <?php
- 
- namespace AjGulati05\LaravelConcurrencyControl\Tests;
- 
+
+namespace AjGulati05\LaravelConcurrencyControl\Tests;
+
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
- 
+
 class TestModelResource extends JsonResource
 {
     /**

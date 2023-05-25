@@ -1,9 +1,11 @@
 <?php
+
 namespace AjGulati05\LaravelConcurrencyControl;
 
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\DB;
+
 trait Versioned
 {
     // This is called when the trait is used in a model
@@ -26,15 +28,15 @@ trait Versioned
 
        return $this->{$column}->timestamp;
    }
+
      // Get the versioned column name from configuration
-   public  function getVersionedColumn(): string
-    {
-        $column= config('concurrency.version_datetime', 'updated_at');
-        $this->validateVersionedColumn($column);
-        return $column;
-    }
- 
-  
+   public function getVersionedColumn(): string
+   {
+       $column = config('concurrency.version_datetime', 'updated_at');
+       $this->validateVersionedColumn($column);
+
+       return $column;
+   }
 
    // Validate the versioned column
    protected function validateVersionedColumn($column)
@@ -55,7 +57,7 @@ trait Versioned
    public function update(array $attributes = [], array $options = [])
    {
        // Expect versionId in attributes
-       if (!isset($attributes['versionId'])) {
+       if (! isset($attributes['versionId'])) {
            abort(422, 'versionId is required');
        }
 
@@ -81,5 +83,4 @@ trait Versioned
        // Update the model
        return parent::update($attributes, $options);
    }
-
 }

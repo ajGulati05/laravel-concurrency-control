@@ -2,8 +2,8 @@
 
 namespace AjGulati05\LaravelConcurrencyControl\Tests;
 
-use Illuminate\Database\Eloquent\Model;
 use AjGulati05\LaravelConcurrencyControl\Versioned;
+use Illuminate\Database\Eloquent\Model;
 
 class TestModel extends Model
 {
@@ -12,6 +12,4 @@ class TestModel extends Model
     public $table = 'test_models';
 
     protected $guarded = [];
-   
-  
 }
