@@ -1,5 +1,5 @@
 <?php
 
-use AjGulati\Concurrency\Tests\TestCase;
+use AjGulati05\LaravelConcurrencyControl\Tests\TestCase;
 
 uses(TestCase::class)->in(__DIR__);

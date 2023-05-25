@@ -2,8 +2,7 @@
 
 namespace AjGulati05\LaravelConcurrencyControl\Tests;
 
-use AjGulati05\LaravelConcurrencyControl\LaravelConcurrencyControlServiceProvider;
-use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Database\Schema\Blueprint;
 use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
@@ -11,26 +10,35 @@ class TestCase extends Orchestra
     protected function setUp(): void
     {
         parent::setUp();
-
-        Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'AjGulati05\\LaravelConcurrencyControl\\Database\\Factories\\'.class_basename($modelName).'Factory'
-        );
+        $this->setUpDatabase();
+      
     }
 
-    protected function getPackageProviders($app)
+  
+
+  
+    protected function getEnvironmentSetUp($app)
     {
-        return [
-            LaravelConcurrencyControlServiceProvider::class,
-        ];
+        $app['config']->set('database.default', 'sqlite');
+        $app['config']->set('database.connections.sqlite', [
+            'driver' => 'sqlite',
+            'database' => ':memory:',
+            'prefix' => '',
+        ]);
     }
 
-    public function getEnvironmentSetUp($app)
+    /**
+     * @param Application $app
+     */
+    protected function setUpDatabase()
     {
-        config()->set('database.default', 'testing');
-
-        /*
-        $migration = include __DIR__.'/../database/migrations/create_laravel-concurrency-control_table.php.stub';
-        $migration->up();
-        */
+        $this->app->get('db')->connection()->getSchemaBuilder()->create('test_models', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name')->nullable();
+            $table->timestamps();
+        });
     }
+
+
+   
 }
