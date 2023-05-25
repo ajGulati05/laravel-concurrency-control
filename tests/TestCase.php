@@ -2,9 +2,9 @@
 
 namespace AjGulati05\LaravelConcurrencyControl\Tests;
 
+use AjGulati05\LaravelConcurrencyControl\LaravelConcurrencyControlServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use AjGulati05\LaravelConcurrencyControl\LaravelConcurrencyControlServiceProvider;
 
 class TestCase extends Orchestra
 {
