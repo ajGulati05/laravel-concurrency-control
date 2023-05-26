@@ -38,18 +38,10 @@ trait Versioned
        return $column;
    }
 
-   // Validate the versioned column
    protected function validateVersionedColumn($column)
    {
-       $table = $this->getTable();
-
-       $columnType = DB::connection($this->getConnectionName())
-           ->getDoctrineColumn($table, $column)
-           ->getType()
-           ->getName();
-
-       if ($columnType !== 'datetime') {
-           throw new \RuntimeException("The versioned column '{$column}' on table '{$table}' must be of type 'datetime'.");
+       if (!$this->{$column} instanceof Carbon) {
+           throw new \RuntimeException("The versioned column '{$column}' must be an instance of 'Carbon'.");
        }
    }
 
