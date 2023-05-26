@@ -4,7 +4,6 @@ namespace AjGulati05\LaravelConcurrencyControl;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Carbon;
-use Illuminate\Support\Facades\DB;
 
 trait Versioned
 {
@@ -40,7 +39,7 @@ trait Versioned
 
    protected function validateVersionedColumn($column)
    {
-       if (!$this->{$column} instanceof Carbon) {
+       if (! $this->{$column} instanceof Carbon) {
            throw new \RuntimeException("The versioned column '{$column}' must be an instance of 'Carbon'.");
        }
    }
