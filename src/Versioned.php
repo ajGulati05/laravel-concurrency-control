@@ -33,11 +33,10 @@ trait Versioned
    {
        $column = config('concurrency.version_datetime', 'updated_at');
        $this->validateVersionedColumn($column);
-
        return $column;
    }
 
-   protected function validateVersionedColumn($column)
+   public function validateVersionedColumn($column)
    {
        if (! $this->{$column} instanceof Carbon) {
            throw new \RuntimeException("The versioned column '{$column}' must be an instance of 'Carbon'.");
