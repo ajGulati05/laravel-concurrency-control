@@ -33,6 +33,7 @@ trait Versioned
    {
        $column = config('concurrency.version_datetime', 'updated_at');
        $this->validateVersionedColumn($column);
+
        return $column;
    }
 

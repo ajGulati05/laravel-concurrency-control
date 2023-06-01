@@ -3,10 +3,8 @@
 namespace AjGulati05\LaravelConcurrencyControl\Tests;
 
 use AjGulati05\LaravelConcurrencyControl\Versioned;
-
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Config;
-
 use Illuminate\Support\Facades\DB;
 use RuntimeException;
 
@@ -18,13 +16,11 @@ beforeEach(function () {
 
         protected $guarded = [];
 
-
         protected $table = 'test';
     };
 
     DB::statement('CREATE TABLE test (id INTEGER PRIMARY KEY, name TEXT, created_at DATETIME,updated_at DATETIME)');
 });
-
 
 it('boots versioned', function () {
 
