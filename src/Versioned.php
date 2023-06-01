@@ -25,10 +25,8 @@ trait Versioned
    {
        $column = $this->getVersionedColumn();
 
-
        return $this->{$column}->timestamp;
    }
-
 
      // Get the versioned column name from configuration
    public function getVersionedColumn(): string
