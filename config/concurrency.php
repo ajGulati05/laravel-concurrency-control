@@ -5,5 +5,5 @@ return [
     /*
      * The column on the model to be used for validating wether or not the data is stale
      */
-    'version_datetime' => 'updated_date',
+    'version_datetime' => 'updated_at',
 ];
